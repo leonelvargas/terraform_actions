@@ -4,12 +4,12 @@ on:
   #Habilita el trigger workflow cuando sucede un Push o un Pull en el master del repo 
   push:
     branches:
-      - master
+      - main
     paths:
       - src/**
   pull_request_target: 
     branches: 
-      - master
+      - main
     paths:
       - src/**  
   # Enable the manual tab in GitHub
