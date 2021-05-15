@@ -23,7 +23,7 @@ data "aws_availability_zones" "available" {
 
 ## Cluster Names
 locals {
-  cluster_name = "test_cluster"
+  cluster_name = "test_cluster_v2"
 }
 
 module "vpc" {
