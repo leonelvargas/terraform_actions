@@ -52,11 +52,14 @@ jobs:
       - name: Terraform Apply
         run: terraform apply -auto-approve
 
-      - name: Build and push CONTAINER_NAME
-        uses: ianbelcher/eks-kubectl-action@master
-        with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_region: ${{ secrets.AWS_DEFAULT_REGION }}
-          cluster_name: ${{ secrets.CLUSTER_NAME }}
-          args: get pods
+      - name: Terraform Apply
+        run: terraform destroy -auto-approve  
+
+      #- name: Build and push CONTAINER_NAME
+       # uses: ianbelcher/eks-kubectl-action@master
+        #with:
+         # aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          #aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          #aws_region: ${{ secrets.AWS_DEFAULT_REGION }}
+          #cluster_name: ${{ secrets.CLUSTER_NAME }}
+          #args: get pods
