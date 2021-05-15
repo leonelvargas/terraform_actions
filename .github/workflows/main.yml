@@ -51,3 +51,13 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
+
+      - name: Rollout restart
+        uses: jonathan-sh/kubectl@1
+        env:
+          kube_confg_data: ${{ secrets.KUBE_CONFIG_DATA }}
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_region: ${{ secrets.AWS_DEFAULT_REGION }}
+        with:
+          args: '"kubectl get pods"'
