@@ -1,6 +1,13 @@
 terraform {
   # Terraform version at the time of writing this post
-  required_version = ">= 0.12.24"
+  required_version = ">= 0.13.1"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.21"
+    }
+  }
 
   backend "s3" {
     bucket = "leonels3demo"
