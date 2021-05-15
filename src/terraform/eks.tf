@@ -55,7 +55,7 @@ module "eks" {
   version = "12.2.0"
 
   cluster_name    = "${local.cluster_name}"
-  cluster_version = "1.17"
+  cluster_version = "1.19"
   subnets         = module.vpc.private_subnets
 
   vpc_id = module.vpc.vpc_id
@@ -63,7 +63,7 @@ module "eks" {
   node_groups = {
     first = {
       desired_capacity = 1
-      max_capacity     = 10
+      max_capacity     = 1
       min_capacity     = 1
 
       instance_type = "t2.micro"
@@ -76,7 +76,7 @@ module "eks" {
 
 ## Get bucket
 data "aws_s3_bucket" "getbucket" {
-  bucket = "cloudquickpocsbackendtf"
+  bucket = "leonels3demo"
 }
 ## S3 buket object upload
 resource "aws_s3_bucket_object" "object" {
