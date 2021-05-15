@@ -17,5 +17,6 @@ terraform {
 }
 
 provider "aws" {
+  profile = "terraform"
   region  = "sa-east-1"
 }
